@@ -6,7 +6,7 @@
 /*   By: mel-ouaj <mel-ouaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 14:19:07 by mel-ouaj          #+#    #+#             */
-/*   Updated: 2025/02/05 16:38:42 by mel-ouaj         ###   ########.fr       */
+/*   Updated: 2025/02/05 17:14:11 by mel-ouaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_pushback(s_stack **x, s_node *n)
 {
 	if (!x || !n)
 		return ;
-    s_node    *last;
+    s_node	*last;
 
     last = (*x) -> top;
     if ((*x) -> top == NULL)
@@ -44,9 +44,9 @@ void	ft_pushback(s_stack **x, s_node *n)
     }
 }
 
-s_stack *stack_init()
+s_stack	*stack_init()
 {
-    s_stack *new = malloc(sizeof(s_stack));
+    s_stack	*new = malloc(sizeof(s_stack));
     if (!new)
         return (NULL);
     new -> top = NULL;
@@ -54,7 +54,7 @@ s_stack *stack_init()
     return (new);
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	int		i;
 	s_node	*n;
@@ -78,7 +78,7 @@ int main(int ac, char **av)
 	
 	// int m = min(&a);
 	// printf("%d \n", m);
-	printf("%d \n", is_dup(&a));
+	// printf("%d \n", is_dup(&a));
 	//sort_three(&a);
 	sort_five(&a, &b);
 	s_node	*test = a -> top;
@@ -87,6 +87,6 @@ int main(int ac, char **av)
 		printf("%d\n", *(int *)test->content);
 		test = test -> next;
 	}
-	printf("%d \n", is_sorted(&a));
+	// printf("%d \n", is_sorted(&a));
 	// printf("%d , %d", a -> size, b -> size);
 }

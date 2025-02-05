@@ -6,13 +6,13 @@
 /*   By: mel-ouaj <mel-ouaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 14:17:10 by mel-ouaj          #+#    #+#             */
-/*   Updated: 2025/02/02 17:26:58 by mel-ouaj         ###   ########.fr       */
+/*   Updated: 2025/02/05 17:17:07 by mel-ouaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void sort_five(s_stack **a, s_stack **b)
+void	sort_five(s_stack **a, s_stack **b)
 {
 	int	i;
 	int	j;
