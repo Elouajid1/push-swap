@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mel-ouaj <mel-ouaj@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mel-ouaj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 17:49:41 by mel-ouaj          #+#    #+#             */
-/*   Updated: 2025/02/01 16:04:23 by mel-ouaj         ###   ########.fr       */
+/*   Created: 2024/11/16 02:27:21 by mel-ouaj          #+#    #+#             */
+/*   Updated: 2024/11/16 18:49:51 by mel-ouaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(s_node *lst)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	int		i;
-	s_node	*node;
+	t_list	*swp;
 
-	i = 0;
-	node = lst;
-	while (node)
+	if (!lst || !(*lst) || !del)
+		return ;
+	while (*lst)
 	{
-		i++;
-		node = node -> next;
+		swp = (*lst)-> next;
+		ft_lstdelone(*lst, del);
+		(*lst) = swp;
 	}
-	return (i);
 }
