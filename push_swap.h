@@ -6,7 +6,7 @@
 /*   By: mel-ouaj <mel-ouaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 14:11:57 by mel-ouaj          #+#    #+#             */
-/*   Updated: 2025/02/02 17:27:27 by mel-ouaj         ###   ########.fr       */
+/*   Updated: 2025/02/05 16:38:24 by mel-ouaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,12 @@ void	sb(s_stack **b, int p);
 void	rb(s_stack **b, int p);
 void	rrb(s_stack **b, int p);
 void	ss(s_stack **a, s_stack **b, int p);
-void	pa(s_stack **a, s_node *n, int p);
-void	pb(s_stack **b, s_node *n, int p);
+void	pa(s_stack **a, s_stack **b, int p);
+void	pb(s_stack **b, s_stack **a, int p);
 void	ft_pushback(s_stack **x, s_node *n);
 int min(s_stack **x);
 void sort_five(s_stack **n, s_stack **m);
+int	is_sorted(s_stack **a);
+int is_dup(s_stack **a);
 
 # endif

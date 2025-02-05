@@ -12,18 +12,32 @@
 
 #include "push_swap.h"
 
-void	pa(s_stack **a, s_node *n, int p)
+void	pa(s_stack **a, s_stack **b, int p)
 {
-	ft_push(a, n);
+	s_node	*n;
+
+	n = (*b) -> top;
+	(*b) -> top = n -> next;
+	n -> next = (*a) -> top;
+	(*a) -> top = n;
+	(*a) -> size++;
+	(*b) -> size--;
 	if (p)
-        write (1, "pa\n", 3);
+		write (1, "pa\n", 3);
 }
 
-void	pb(s_stack **b, s_node *n, int p)
+void	pb(s_stack **b, s_stack **a, int p)
 {
-	ft_push(b, n);
+	s_node	*n;
+
+	n = (*a) -> top;
+	(*a) -> top = n -> next;
+	n -> next = (*b) -> top;
+	(*b) -> top = n;
+	(*a) -> size--;
+	(*b) -> size++;
 	if (p)
-        write (1, "pb\n", 3);
+		write (1, "pb\n", 3);
 }
 
 void	ft_swap(s_stack **x)

@@ -21,7 +21,8 @@ int min(s_stack **x)
 
     i = 0;
     min = (*x) -> top;
-    current = (*x) -> top;    
+    current = (*x) -> top;
+    min_index = 0;    
     while (current != NULL)
     {
         if (*(int *)current -> content < *(int *)min -> content)
