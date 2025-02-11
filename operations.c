@@ -6,7 +6,7 @@
 /*   By: mel-ouaj <mel-ouaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 16:45:13 by mel-ouaj          #+#    #+#             */
-/*   Updated: 2025/02/02 17:57:25 by mel-ouaj         ###   ########.fr       */
+/*   Updated: 2025/02/10 15:04:18 by mel-ouaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,17 @@ void	pb(s_stack **b, s_stack **a, int p)
 
 void	ft_swap(s_stack **x)
 {
-	void	*tmp;
+	int	tmp;
+	int	index;
 
 	if (!x)
 		return ;
 	tmp = (*x) -> top -> content;
+	index = (*x) -> top -> index;
 	(*x) -> top -> content = (*x) -> top -> next -> content;
+	(*x) -> top -> index = (*x) -> top -> next -> index;
 	(*x) -> top -> next -> content = tmp;
+	(*x) -> top -> next -> index = index;
 }
 
 void	rotate(s_stack **x)

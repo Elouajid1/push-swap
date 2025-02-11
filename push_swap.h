@@ -6,7 +6,7 @@
 /*   By: mel-ouaj <mel-ouaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 14:11:57 by mel-ouaj          #+#    #+#             */
-/*   Updated: 2025/02/05 17:13:32 by mel-ouaj         ###   ########.fr       */
+/*   Updated: 2025/02/11 14:59:27 by mel-ouaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+# include <limits.h>
 
 typedef struct t_node {
-	int	*content;
-	struct t_node *next;
+	int				content;
+	int				index;
+	struct t_node	*next;
 } s_node;
 
 typedef struct t_stack {
@@ -28,9 +30,9 @@ typedef struct t_stack {
 } s_stack;
 
 s_stack	*stack_init();
-s_node	*ft_lstnew(void *content);
+s_node	*ft_lstnew(int content);
 void	ft_push(s_stack **x, s_node *n);
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 int		ft_isdigit(int c);
 void	ft_swap(s_stack **x);
 void	sort_three(s_stack **n);
@@ -51,6 +53,13 @@ void	ft_pushback(s_stack **x, s_node *n);
 int		min(s_stack **x);
 void	sort_five(s_stack **n, s_stack **m);
 int		is_sorted(s_stack **a);
-int		is_dup(s_stack **a);
+int		is_dup(s_stack **a, int n);
+void	ft_lstclear(s_stack **x);
+void	free_nums(char	**nums);
+char	**ft_split(char const *s, char c);
+void	Process_Num(char **nums, s_stack **a);
+void	s_error(s_stack **a);
+void	sort_two(s_stack **n);
+void	indexing(s_stack **a);
 
 # endif

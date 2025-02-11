@@ -6,7 +6,7 @@
 /*   By: mel-ouaj <mel-ouaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 14:19:33 by mel-ouaj          #+#    #+#             */
-/*   Updated: 2025/02/05 17:16:45 by mel-ouaj         ###   ########.fr       */
+/*   Updated: 2025/02/11 17:36:13 by mel-ouaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	min(s_stack **x)
 	min_index = 0;    
 	while (current != NULL)
 	{
-		if (*(int *)current -> content < *(int *)min -> content)
+		if (current -> content < min -> content)
 		{
 			min = current;
 			min_index = i;
@@ -36,41 +36,42 @@ int	min(s_stack **x)
 	return (min_index);
 }
 
-int	is_dup(s_stack **a)
+void	free_nums(char	**nums)
 {
-	s_node	*current;
-	s_node	*next;
+	int	i;
 
-	if ((*a) -> size < 2)
-		return (0);
-	current = (*a) -> top;
-	while (current -> next)
+	i = 0;
+	while (nums[i])
 	{
-		next = current -> next;
-		while (next)
-		{
-			if (*(int *)current -> content == (*(int *)next -> content))
-				return (0);
-			next = next -> next;
-		}
-		current = current -> next;
+		free(nums[i]);
+		i++;
 	}
-	return (1);
+	free (nums);
 }
 
-int	is_sorted(s_stack **a)
+void	indexing(s_stack **a)
 {
 	s_node	*current;
-	s_node	*next;
+	s_node	*tmp;
 
-	if ((*a) -> size < 2)
-		return (0);
-	current  = (*a) -> top;
-	while (current -> next)
+	tmp = (*a) -> top;
+	if (!tmp -> next)
+		return ;
+	while (tmp)
 	{
-		if (*(int *)current -> content > *(int *)current -> next -> content)
-			return (0);
-		current = current -> next;
+		tmp -> index = 0;
+		current = (*a) -> top;
+		while (current)
+		{
+			if (tmp -> content > current -> content)
+				tmp -> index++;
+			current = current -> next;
+		}
+		tmp = tmp -> next;
 	}
-	return (1);
+}
+
+void	first_index(s_stack **s)
+{
+	
 }
