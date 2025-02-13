@@ -6,7 +6,7 @@
 /*   By: mel-ouaj <mel-ouaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 14:19:33 by mel-ouaj          #+#    #+#             */
-/*   Updated: 2025/02/11 17:36:13 by mel-ouaj         ###   ########.fr       */
+/*   Updated: 2025/02/13 16:01:24 by mel-ouaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,6 @@ void	indexing(s_stack **a)
 	s_node	*tmp;
 
 	tmp = (*a) -> top;
-	if (!tmp -> next)
-		return ;
 	while (tmp)
 	{
 		tmp -> index = 0;
@@ -71,7 +69,37 @@ void	indexing(s_stack **a)
 	}
 }
 
-void	first_index(s_stack **s)
+int	first_index(s_stack **s, int p, int i)
 {
+	int		index;
+	s_node	*current;
 	
+
+	index = 0;
+	current = (*s) -> top;
+	while (current)
+	{
+		if (current -> index <= i + p)
+			return (index);
+		index++;
+		current = current -> next;
+	}
+	return (index);
+}
+
+int	get_distance(s_stack **s, int idx)
+{
+	int		i;
+	s_node	*current;
+
+	i = 0;
+	current = (*s) -> top;
+	while (current)
+	{
+		if (current -> index == idx)
+			break ;
+		current = current -> next;
+		i++;
+	}
+	return (i);
 }

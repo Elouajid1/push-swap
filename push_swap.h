@@ -6,7 +6,7 @@
 /*   By: mel-ouaj <mel-ouaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 14:11:57 by mel-ouaj          #+#    #+#             */
-/*   Updated: 2025/02/11 14:59:27 by mel-ouaj         ###   ########.fr       */
+/*   Updated: 2025/02/13 14:54:55 by mel-ouaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,14 @@ void	Process_Num(char **nums, s_stack **a);
 void	s_error(s_stack **a);
 void	sort_two(s_stack **n);
 void	indexing(s_stack **a);
+int		first_index(s_stack **s, int p, int i);
+int		get_distance(s_stack **s, int idx);
+void    rotate_s_b(s_stack **b, int highest_idx, int s_highest_idx);
+void	push_to_a(s_stack **a, s_stack **b);
+void	push_to_b(s_stack **a, s_stack **b, int p);
+int		max(s_stack **s);
+void	push_to_a(s_stack **a, s_stack **b);
+void	ft_sort(s_stack	**a, s_stack **b);
+void	sort_stacks(s_stack **a, s_stack **b);
 
 # endif

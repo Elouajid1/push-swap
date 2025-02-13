@@ -6,7 +6,7 @@
 /*   By: mel-ouaj <mel-ouaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 14:19:07 by mel-ouaj          #+#    #+#             */
-/*   Updated: 2025/02/11 15:09:24 by mel-ouaj         ###   ########.fr       */
+/*   Updated: 2025/02/13 15:58:07 by mel-ouaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,20 +84,17 @@ int	main(int ac, char **av)
 			i++;
 		}
 	}
-	indexing(&a);
-	if (a -> size == 2)
-		sort_two(&a);
-	else if (a -> size == 3)
-		sort_three(&a);
-	else if (a -> size <= 5)
-		sort_five(&a, &b);
-	s_node	*test = a -> top;
-	//printf ("%d\n", a -> size);
+	sort_stacks(&a, &b);
+	// s_node	*test = a -> top;
+	// printf ("a size : %d\n", a -> size);
+	// printf ("b size : %d\n", b -> size);
 	// while (test)
 	// {
 	// 	printf("%d\n", test->content);
 	// 	test = test -> next;
 	// }
+	// printf ("a size : %d\n", a -> size);
+	// printf ("b size : %d\n", b -> size);
 	// test = a -> top;
 	// while (test)
 	// {
